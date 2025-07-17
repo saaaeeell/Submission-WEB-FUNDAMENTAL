@@ -1,0 +1,141 @@
+/* Reset dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+  padding: 1rem;
+}
+
+/* App Bar */
+app-bar {
+  display: block;
+  background-color: #6200ea;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* Layout Grid */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 2rem;
+}
+
+/* Form styling */
+.form-section {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+note-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+note-form input,
+note-form textarea {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+note-form button {
+  padding: 0.75rem;
+  background-color: #6200ea;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+note-form button:hover {
+  background-color: #4500b5;
+}
+
+/* Notes Grid */
+#notes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* Note Item Styling */
+.note-item {
+  background-color: #e0f7fa;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #26a69a;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.note-item:hover {
+  transform: scale(1.02);
+}
+
+.note-item h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: #00695c;
+}
+
+.note-item p {
+  margin-bottom: 0.5rem;
+}
+
+.note-item small {
+  color: #555;
+  font-size: 0.8rem;
+  display: block;
+  margin-top: 0.5rem;
+}
+
+body.loading::before {
+  content: 'Loading...';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff3;
+  color: black;
+  padding: 1rem;
+  text-align: center;
+  z-index: 1000;
+}
+
+#loading-indicator {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #6200ea;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  z-index: 999;
+  display: none;
+}
+
+#loading-indicator.show {
+  display: block;
+}
